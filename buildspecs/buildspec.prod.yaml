@@ -1,10 +1,4 @@
 version: 0.2
-env:
-    variables:
-        CACHE_CONTROL: "86400"
-        BUILD_ENV: "prod"
-        S3_BUCKET: "amer-admin-preprod"
-        CLOUDFRONT_ID: "E3O6BVQ8M0L2LO"
 phases:
     install:
         commands:
@@ -25,7 +19,7 @@ phases:
             - aws s3 cp dist s3://amer-admin-preprod --recursive
             # STEP: Clear CloudFront cache.
             - aws configure set preview.cloudfront true
-            - aws cloudfront create-invalidation --distribution-id EYFGZAHIM4YUY --paths "/*"
+            - aws cloudfront create-invalidation --distribution-id E3O6BVQ8M0L2LO --paths "/*"
 artifacts:
     files:
         - '**/*'
