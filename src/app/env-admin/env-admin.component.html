@@ -6,8 +6,9 @@
     </div>
     <div *ngIf="!isLoading">
       <div class="form-group">
-        <select class="custom-select activity-selector" id="selector">
+        <select class="custom-select activity-selector" (change)="setSelectedConfiguration($event.target.value)" id="selector">
           <option selected>qa-refresh</option>
+          <option>qa-refresh-test</option>
         </select>
         <button type="button" class="btn btn-primary" (click)="stopAllServices()">Stop All Services</button>
       </div>

@@ -8,7 +8,6 @@ import { Schema, CellType } from '@app/models/schema.model';
 import * as _ from 'lodash';
 
 const ACTIVE_STATUS = 'Active';
-const ACTIVITY_HARDCODE = 'qa-refresh';
 
 const SEARCH_RESULTS_SCHEMA = [
   {
@@ -45,6 +44,7 @@ export class EnvAdminComponent implements OnInit {
   isLoading: boolean;
   resultSchema: Schema[];
   dataSet: Array<any> = [];
+  selectedConfiguration: string;
   cellTypes = CellType;
 
   constructor(private systemActivitiesService: SystemActivitiesService, private route: ActivatedRoute) {
@@ -58,7 +58,8 @@ export class EnvAdminComponent implements OnInit {
   populateSystems() {
     this.dataSet = [];
     this.isLoading = true;
-    this.systemActivitiesService.getSystems({ activity: ACTIVITY_HARDCODE })
+    const configuration = this.selectedConfiguration  ? this.selectedConfiguration : 'qa-refresh';
+    this.systemActivitiesService.getSystems({ activity: configuration })
       .pipe(finalize(() => {
         this.isLoading = false;
         this.resultSchema = SEARCH_RESULTS_SCHEMA;
@@ -78,6 +79,11 @@ export class EnvAdminComponent implements OnInit {
    */
   isActive(value: string): boolean {
     return value === ACTIVE_STATUS;
+  }
+
+  setSelectedConfiguration(configuration: string) {
+    this.selectedConfiguration = configuration;
+    this.populateSystems();
   }
 
   /**
@@ -107,7 +113,7 @@ export class EnvAdminComponent implements OnInit {
   startService(cluster: string) {
     const body = [cluster];
 
-    this.systemActivitiesService.startSystems({ activity: ACTIVITY_HARDCODE }, body)
+    this.systemActivitiesService.startSystems({ activity: this.selectedConfiguration }, body)
       .pipe(finalize(() => {
         this.populateSystems();
       }))
@@ -119,7 +125,7 @@ export class EnvAdminComponent implements OnInit {
   stopService(cluster: string) {
     const body = [cluster];
 
-    this.systemActivitiesService.stopSystems({ activity: ACTIVITY_HARDCODE }, body)
+    this.systemActivitiesService.stopSystems({ activity: this.selectedConfiguration }, body)
       .pipe(finalize(() => {
         this.populateSystems();
       }))
@@ -130,7 +136,7 @@ export class EnvAdminComponent implements OnInit {
 
   stopAllServices() {
     this.getSystemClusters((body: any) => {
-      this.systemActivitiesService.stopSystems({ activity: ACTIVITY_HARDCODE }, body)
+      this.systemActivitiesService.stopSystems({ activity: this.selectedConfiguration }, body)
       .pipe(finalize(() => {
         this.populateSystems();
       }))
