@@ -15,7 +15,7 @@ phases:
         commands:
             # Builds Angular application.
             - echo Build started on `date`
-            - npm run build-qa
+            - npm run build
     post_build:
          commands:
             # Clear S3 bucket.
