@@ -3,7 +3,7 @@
     "version": "5.1.0",
     "props": {
       "location": "path",
-      "appName": "event-catalog",
+      "appName": "admin-utilitiy",
       "target": [
         "web"
       ],
@@ -12,7 +12,7 @@
       "auth": true,
       "lazy": true,
       "angulartics": false,
-      "projectName": "event-catalog",
+      "projectName": "admin-utilitiy",
       "packageManager": "npm",
       "mobile": []
     }

@@ -1,4 +1,4 @@
-# event-catalog
+# admin-utilitiy
 
 Welcome to the project documentation!
 
