@@ -1,0 +1,35 @@
+@import "src/theme/theme-variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+
+$card-column-sizes: (
+    xs: 1,
+    sm: 2,
+    md: 4,
+    lg: 6,
+);
+
+@each $breakpoint-size, $column-count in $card-column-sizes {
+    @include media-breakpoint-up($breakpoint-size) {
+      .card-columns {
+        column-count: $column-count;
+        column-gap: 1rem;
+
+        .card {
+          display: inline-block;
+          width: 100%; // Don't let them exceed the column width
+        }
+      }
+    }
+}
+
+$card-height: 200px;
+
+.amway-card {
+  background-color: #004481;
+  height: $card-height;
+}
+
+.amway-card-disabled {
+  background-color: grey;
+  height: $card-height;
+}

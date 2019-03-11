@@ -1,0 +1,121 @@
+.amway-theme {
+  .full-width-rich-text-component {
+    position: relative;
+    width: "calc(100% + 80px)";
+    margin-left: -40px;
+    text-align: center;
+
+    @media (max-width: $screen-sm-max) {
+      width: "calc(100% + 30px)";
+      margin-left: -15px;
+    }
+
+    &__wrapper--gray * {
+      background: #eeeeee !important;
+    }
+
+    &__content {
+      padding: 25px 0;
+
+      @media (max-width: $screen-sm-max) {
+        padding: 10px 0;
+      }
+
+      & * {
+        margin: 0;
+      }
+
+      span {
+        display: inline-block;
+        font-size: 18px;
+        margin-left: 5px;
+
+        @media (max-width: $screen-sm-max) {
+          display: block;
+          font-size: 12px;
+        }
+      }
+
+      strong {
+        & * {
+          display: inline-block;
+          font-size: 26px;
+
+          @media (max-width: $screen-sm-max) {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+
+  .full-width-title-component {
+    position: relative;
+    width: "calc(100% + 80px)";
+    margin-left: -40px;
+    text-align: center;
+    padding: 75px 0;
+
+    @media (max-width: $screen-sm-max) {
+      width: "calc(100% + 30px)";
+      margin-left: -15px;
+      padding: 25px 0;
+    }
+
+    &__title {
+      margin-bottom: 5px;
+    }
+
+    &__sub-title {
+      color: $text-color;
+    }
+
+  }
+
+
+  .double-title-component {
+    position: relative;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+
+    &__link-wrapper {
+      position: relative;
+
+      @media (max-width: $screen-sm-max) {
+        margin-bottom: 25px;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .mobile-image {
+        display: none;
+      }
+      @media (max-width: $screen-sm-max) {
+        .desktop-image {
+          display: none;
+        }
+        .mobile-image {
+          display: inline-block;
+        }
+      }
+    }
+
+    &__video-wrapper {
+        & * {
+          background: transparent;
+        }
+
+        .vjs-control-bar {
+          background-color: rgba(0,0,0,.45);
+        }
+
+        .amw-video-component .video-js.amw-video-container.full-width-video {
+            width: 100%;
+            margin-left: auto;
+        }
+    }
+  }
+}

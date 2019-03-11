@@ -1,0 +1,28 @@
+<ul class="app-pagination">
+  <li
+    class="app-pagination__item app-pagination__navigation"
+    (click)="selectPage(1)"
+    [class.app-pagination__item--disabled]="isPaginationItemDisabled(1)"
+  >First</li>
+  <li
+    class="app-pagination__item app-pagination__navigation"
+    (click)="selectPage(currentPage - 1)"
+    [class.app-pagination__item--disabled]="isPaginationItemDisabled(1)"
+  >Previous</li>
+  <li
+    *ngFor="let page of pages$ | async"
+    class="app-pagination__item app-pagination__number"
+    [class.app-pagination__item--current]="page === currentPage"
+    (click)="selectPage(page)"
+  >{{ page }}</li>
+  <li
+    class="app-pagination__item app-pagination__navigation"
+    (click)="selectPage(currentPage + 1)"
+    [class.app-pagination__item--disabled]="isPaginationItemDisabled(totalPages)"
+  >Next</li>
+  <li
+    class="app-pagination__item app-pagination__navigation"
+    (click)="selectPage(totalPages)"
+    [class.app-pagination__item--disabled]="isPaginationItemDisabled(totalPages)"
+  >Last</li>
+</ul>

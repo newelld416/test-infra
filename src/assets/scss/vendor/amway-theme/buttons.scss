@@ -1,0 +1,138 @@
+@import 'variables.scss';
+@import '../amway-theme/fonts.scss';
+
+.amway-theme {
+
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  button {
+      background: none;
+      border: 0;
+      color: inherit;
+      font: inherit;
+      line-height: normal;
+      overflow: visible;
+      padding: 0;
+      -webkit-appearance: button; /* for input */
+      -webkit-user-select: none; /* for button */
+         -moz-user-select: none;
+          -ms-user-select: none;
+
+      &:focus {
+        outline: 0;
+      }
+  }
+  input::-moz-focus-inner,
+  button::-moz-focus-inner {
+      border: 0;
+      padding: 0;
+  }
+
+  [role="button"] {
+      color: inherit;
+      cursor: default;
+      display: inline-block;
+      text-align: center;
+      text-decoration: none;
+      white-space: pre;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+  }
+
+  [role="button"]
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  button,
+  .btn {
+    box-sizing: border-box;
+    color: $deepBlue;
+    font-family: 'SourceSansPro';
+    font-size: 1.125em;
+    font-weight: 600;
+    padding: 0 25px;
+    height: 48px;
+    text-transform: uppercase;
+
+    &.primary {
+      color: $white;
+      background-color: $deepBlue;
+      border: 1px solid $deepBlue;
+
+      &:hover {
+        background-color: $deepBlueLight;
+        border: 1px solid $deepBlueLight;
+        cursor: pointer;
+      }
+
+      // TODO make the same changes in components repo when problem is fixed
+      &:disabled,
+      &.disabled,
+      &[disabled] {
+        background-color: $grey2;
+        border: 1px solid $grey2;
+      }
+    }
+
+    &.secondary {
+      color: $deepBlue;
+      background-color: $white;
+      border: 1px solid $deepBlue;
+
+      &:hover {
+        background-color: $deepBlue;
+        color: $white;
+        cursor: pointer;
+      }
+
+      // TODO make the same changes in components repo when problem is fixed
+      &:disabled,
+      &.disabled,
+      &[disabled] {
+        background: $white;
+        border: 1px solid $grey2;
+        color: $grey2;
+      }
+    }
+
+    &.transparent {
+      color: $white;
+      background-color: rgba(0, 0, 0, .3);
+      border: 1px solid $white;
+
+      &:hover {
+        background-color: rgba(128, 130, 133, .3);
+        border-color: $white;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+
+    &.small {
+      height: 40px;
+      font-size: 1em;
+    }
+
+    &.large {
+      font-size: 1.375em;
+      padding: 0 40px;
+      height: 60px;
+    }
+
+    &.link-btn {
+      color: $blue;
+      text-transform: none;
+
+      &:hover, &:focus {
+        text-decoration: underline;
+      }
+
+      &:disabled {
+        color: $grey2;
+      }
+
+    }
+  }
+}

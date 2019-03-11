@@ -1,0 +1,100 @@
+@import '../amway-theme/variables.scss';
+@import '../amway-theme/fonts.scss';
+
+.amway-theme {
+  .amw-checkbox-wrap {
+    position: relative;
+    background-color: transparent;
+    text-transform: none;
+  }
+
+  label.amw-checkbox-wrap {
+    .amw-global-checkbox, .amw-checkbox-overlay {
+      top: 2px;
+    }
+  }
+
+  input.amw-global-checkbox {
+    margin: 0;
+    padding: 0;
+    width: 17px;
+    height: 18px;
+    outline: none;
+    z-index: 10;
+    position: relative;
+    top: 3px;
+    left: 2px;
+    opacity: 0;
+    cursor: pointer;
+
+    &:checked + .amw-checkbox-overlay {
+      background: $blue;
+      border-color: $blue;
+
+      &:before {
+        font-family: 'icomoon' !important; // TODO add to the repo
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "\e909";
+        color: $white;
+        font-size: 8px;
+        bottom: 4px;
+        left: 4px;
+        position: relative;
+      }
+    }
+
+    & ~ .amw-after-checkbox-label {
+      text-transform: none;
+    }
+
+    &:disabled {
+      cursor: default;
+    }
+    &:disabled + .amw-checkbox-overlay {
+      background: $grey2;
+      border-color: $grey2;
+      cursor: default;
+    }
+    &:disabled ~ .amw-after-checkbox-label {
+      color: $grey2;
+      cursor: default;
+      .amw-label-checkbox-text {
+        color: $grey2;
+        cursor: default;
+      }
+    }
+    &:disabled ~ .amw-label-checkbox-text {
+      color: $grey2;
+      cursor: default;
+    }
+  }
+
+  .amw-checkbox-overlay {
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $grey1;
+    background: $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 22px;
+    cursor: pointer;
+  }
+
+  .amw-label-checkbox-text {
+    margin: 0 0 0 10px;
+    cursor: pointer;
+    color: $grey4;
+    font-weight: 400;
+  }
+}

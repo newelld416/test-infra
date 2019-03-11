@@ -1,0 +1,112 @@
+@import '../amway-theme/variables.scss';
+@import '../amway-theme/fonts.scss';
+
+.amway-theme {
+  .amw-radio-wrap {
+    position: relative;
+    text-transform: none;
+  }
+
+  label.amw-radio-wrap {
+    .amw-global-radio {
+      top: 3px;
+    }
+
+    .amw-radio-overlay {
+      top: 4px;
+    }
+  }
+
+  input.amw-global-radio {
+    margin: 0;
+    padding: 0;
+    width: 16px;
+    height: 16px;
+    margin-left: 1px;
+    outline: none;
+    z-index: 10;
+    position: relative;
+    opacity: 0;
+    top: 2px;
+    cursor: pointer;
+
+    &:checked + .amw-radio-overlay {
+      border-color: $lightGreyText;
+
+      &:before {
+        font-family: 'AmwayIcons' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        content: "";
+        width: 10px;
+        height: 10px;
+        display: block;
+        border-radius: 50%;
+        background: $blue;
+        font-size: 8px;
+        top: 3px;
+        left: 3px;
+        position: relative;
+      }
+    }
+
+    & ~ .amw-after-radio-label {
+      text-transform: none;
+    }
+
+    &:disabled {
+      cursor: default;
+    }
+    &:disabled + .amw-radio-overlay {
+      background: $white;
+      border-color: $grey2;
+      cursor: default;
+
+      &:before {
+        background: $grey2;
+      }
+    }
+    &:disabled ~ .amw-after-radio-label {
+      color: $grey2;
+      cursor: default;
+      .amw-label-radio-text {
+        color: $grey2;
+        cursor: default;
+      }
+    }
+
+    &:disabled ~ .amw-label-radio-text {
+      color: $grey2;
+      cursor: default;
+    }
+  }
+
+  .amw-radio-overlay {
+    margin: 0;
+    padding: 0;
+    z-index: 5;
+    border-radius: 50%;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $grey1;
+    background: $white;
+    position: absolute;
+    top: 2px;
+    left: 0;
+    line-height: 22px;
+    cursor: pointer;
+  }
+
+  .amw-label-radio-text {
+    margin: 0 0 0 10px;
+    cursor: pointer;
+    color: $grey4;
+    font-weight: 400;
+  }
+}

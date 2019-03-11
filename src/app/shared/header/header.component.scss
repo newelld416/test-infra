@@ -1,0 +1,17 @@
+@import "src/theme/theme-variables";
+
+.navbar {
+  margin-bottom: $spacer;
+  color: white;
+  background-color: #004481;
+
+  .nav-item {
+    color: white;
+  }
+}
+
+.nav-link.dropdown-toggle {
+  cursor: pointer;
+}
+
+

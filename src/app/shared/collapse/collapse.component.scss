@@ -1,0 +1,44 @@
+@import '../../../assets/scss/variables';
+
+:host-context(amw-collapse) {
+  display: block;
+  margin-top: 20px;
+  border: solid $color__grey;
+  border-width: 1px 0;
+
+  amw-collapse + & {
+    border-top: 0;
+    margin-top: 0;
+  }
+}
+
+.app-collapse {
+  position: relative;
+  padding: 0 20px;
+
+  &__icon {
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    font-size: 14px;
+    color: $color__blue;
+    cursor: pointer;
+  }
+
+  &__content {
+    display: none;
+
+    &--shown {
+      display: block;
+    }
+  }
+}
+
+.app-collapse-title {
+  padding: 40px 0;
+  cursor: pointer;
+
+  &__icon {
+    margin-right: 5px;
+  }
+}

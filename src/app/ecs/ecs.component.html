@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="container-fluid">
+  <!-- This section is displayed if a cluster is selected -->
+  <div class="container" *ngIf="clusterSelected">
+    <app-service-overview [cluster]="cluster" [service]="service"></app-service-overview>
+  </div>
+
+  <!-- This section is displayed if a cluster is selected -->
+  <div class="container" *ngIf="!clusterSelected">
+    <div *ngIf="isLoading">
+      <app-spinner></app-spinner>
+    </div>
+    <div *ngIf="!isLoading">
+      <!-- <form>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="amw-input">
+              <input #cluster type="text" class="form-control" placeholder="Cluster">
+            </div>
+            <div class="amw-input">
+              <input #service type="text" class="form-control" placeholder="Service">
+            </div>
+            <div class="amw-input">
+              <input #environment type="text" class="form-control" placeholder="Environment">
+            </div>
+            <div class="amw-input">
+              <button type="button" (click)="filterData(cluster.value, service.value, environment.value)"
+                class="btn btn-primary">Filter</button>
+            </div>
+            <div class="amw-input">
+              <button type="reset" (click)="clearSearch()" class="btn btn-secondary">Reset</button>
+            </div>
+          </div>
+        </div>
+      </form> -->
+      <app-table [dataSet]="filteredData" [resultSchema]="resultSchema"></app-table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+@at-root {
+  // Import the fonts
+  @font-face {
+    font-family: 'RobotoCondensed';
+    src: url('assets/fonts/RobotoCondensed/RobotoCondensed-Regular.ttf');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'RobotoCondensed';
+    src: url('assets/fonts/RobotoCondensed/RobotoCondensed-Bold.ttf');
+    font-weight: 700;
+  }
+
+  @font-face {
+    font-family: 'SourceSansPro';
+    src: url('assets/fonts/SourceSansPro/SourceSansPro-Regular.ttf');
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'SourceSansPro';
+    src: url('assets/fonts/SourceSansPro/SourceSansPro-Semibold.ttf');
+    font-weight: 600;
+  }
+
+  @font-face {
+    font-family: 'SourceSansPro';
+    src: url('assets/fonts/SourceSansPro/SourceSansPro-Bold.ttf');
+    font-weight: 700;
+  }
+}

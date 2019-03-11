@@ -1,0 +1,14 @@
+<div class="app-collapse">
+  <h5 class="app-collapse-title" (click)="changeState()">
+    <span class="app-collapse-title__icon {{icon}}" *ngIf="icon"></span>
+    {{ title }}
+    <div
+      class="app-collapse__icon"
+      [ngClass]="{'icon-plus': !state, 'icon-minus': state}"
+    ></div>
+  </h5>
+
+  <div class="app-collapse__content" [class.app-collapse__content--shown]="state">
+    <ng-content></ng-content>
+  </div>
+</div>

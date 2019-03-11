@@ -1,0 +1,23 @@
+[
+  {
+    "topic": "test",
+    "key": "a2V5",
+    "value": "Y29uZmx1ZW50",
+    "partition": 1,
+    "offset": 100
+  },
+  {
+    "topic": "test",
+    "key": "a2V5",
+    "value": "{'a2Fma2E': 'test'}",
+    "partition": 2,
+    "offset": 101
+  },
+  {
+    "topic": "test",
+    "key": "a2V5",
+    "value": "Y29uZmx1ZW50",
+    "partition": 1,
+    "offset": 100
+  }
+]

@@ -1,0 +1,28 @@
+<table class="table table-hover table-striped">
+  <thead>
+    <tr>
+      <th *ngFor="let item of resultSchema">
+        <div class="form-group">
+          <div *ngIf="item.filter">
+            <input #cluster type="text" class="form-control" placeholder="{{item.title}}" (keyup)='filterData($event.target.value, item.property)'>
+          </div>
+          <div *ngIf="!item.filter">
+            <input #cluster type="text" class="form-control" placeholder="{{item.title}}" disabled>
+          </div>
+        </div>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dataElement of filteredDataSet">
+      <td *ngFor="let item of resultSchema" [ngSwitch]="item.type">
+        <span *ngSwitchCase="cellTypes.Data">{{ getValue(dataElement, item.property) }}</span>
+        <span *ngSwitchCase="cellTypes.Link">
+          <a [routerLink]="getValue(dataElement, item.property)">
+            <button type="button" class="btn btn-primary">{{ item.title }}</button>
+          </a>
+        </span>
+      </td>
+    </tr>
+  </tbody>
+</table>

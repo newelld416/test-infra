@@ -1,0 +1,53 @@
+.amw-video-component {
+  .video-js.amw-video-container {
+    width: 100%;
+    height: auto;
+    &.vjs-mouse {
+      .vjs-big-play-button {
+        width: 100px;
+        height: 100px;
+        top: 'calc(50% - 60px)';
+        left: 'calc(50% - 50px)';
+        border-radius: 50%;
+        border: 4px solid white;
+        background: none;
+
+        &:before {
+          font-size: 35px;
+          width: 30px;
+        }
+      }
+    }
+
+    &.full-width-video {
+      width: "calc(100% + 80px)";
+      margin-left: -40px;
+      padding-top: 48.25%;
+
+      @media (max-width: $screen-sm-max) {
+        width: "calc(100% + 30px)";
+        margin-left: -15px;
+      }
+    }
+    &.vjs-fullscreen {
+      margin: auto;
+    }
+  }
+}
+
+.overlay-menu__tab__banner {
+  .amw-video-component {
+    & * {
+      background: transparent;
+    }
+
+    .video-js.amw-video-container.full-width-video {
+        width: 100%;
+        margin-left: -20px;
+    }
+
+    .vjs-control-bar {
+      background-color: rgba(0,0,0,.45);
+    }
+  }
+}

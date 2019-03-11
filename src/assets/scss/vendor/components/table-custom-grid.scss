@@ -1,0 +1,63 @@
+.amway-theme {
+  .table-content-rows {
+    .table-header {
+      height: 2.5em;
+      border-top: 1px solid $grey1;
+      border-bottom: 1px solid $grey1;
+      background: $grey0;
+
+      div {
+        background: transparent;
+      }
+    }
+
+    .header-element {
+      &:first-of-type {
+        padding-left: 0;
+      }
+      &:last-of-type {
+        padding-right: 0;
+      }
+      .header-text {
+        background: none;
+        font-size: 0.875em;
+        line-height: 1.7145em;
+        display: inline-block;
+        padding: 7px 0;
+        text-transform: uppercase;
+        color: $deepBlue;
+        font-weight: 600;
+      }
+    }
+
+    .table-row {
+      div {
+        background: transparent;
+      }
+
+      &:nth-of-type(odd) {
+        .table-row-wrapper {
+          background: $grey0;
+        }
+      }
+
+      .row-element {
+        padding-top: 1.125em;
+        padding-bottom: 1.125em;
+
+        &:first-of-type {
+          padding-left: 0;
+        }
+        &:last-of-type {
+          padding-right: 0;
+        }
+        .row-text {
+          background: none;
+          font-size: 1em;
+          line-height: 1.5em;
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

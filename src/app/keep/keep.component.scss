@@ -1,0 +1,9 @@
+@import "src/theme/theme-variables";
+@import "~bootstrap/scss/mixins/_breakpoints";
+
+
+.warning-text {
+  text-align: center;
+  margin: 40px;
+  color: red;
+}

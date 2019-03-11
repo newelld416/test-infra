@@ -1,0 +1,82 @@
+@import '../amway-theme/variables.scss';
+@import '../amway-theme/fonts.scss';
+
+.amway-theme {
+  .navigation-tabs-container {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .tabs-toggles {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+  }
+
+  .tab-toggle-wrap {
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flex;
+    display: inline-flex;
+  }
+
+  .tabs-toggles {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid $grey1;
+
+    .tab-toggle-wrap {
+      margin-bottom: -1px;
+
+      &:last-of-type {
+        .tab-toggle {
+          border-right: 1px solid $grey1;
+        }
+      }
+      .tab-toggle {
+        border: 1px solid $grey1;
+        border-right: none;
+        background: $grey0;
+        padding: 1.1875em 1.875em;
+        outline: none;
+
+        .toggle-text {
+          line-height: 1.25em;
+          color: $grey4;
+          background: none;
+        }
+
+        &:hover {
+          .toggle-text {
+            color: $deepBlue;
+          }
+        }
+        &:focus {
+          text-decoration: none;
+        }
+      }
+
+      &.active .tab-toggle {
+        background: $white;
+        border-bottom: none;
+        border-top: 4px solid $cyan;
+        padding-top: 1em;
+        .toggle-text {
+          color: $deepBlue;
+        }
+      }
+    }
+  }
+
+  .tabs-content-blocks {
+    margin: 0;
+    padding: 0;
+    .content-block {
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

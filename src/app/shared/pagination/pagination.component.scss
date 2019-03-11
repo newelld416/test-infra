@@ -1,0 +1,60 @@
+@import '../../../assets/scss/variables';
+
+$pagination-item__number_size: 40px;
+$pagination-item__number_font_size: 20px;
+$pagination-item__nav_width: 60px;
+$pagination-item__nav_height: 40px;
+$pagination-item__nav_font_size: 15px;
+$pagination-item__nav_margin: 15px;
+
+.app-pagination {
+  margin: 40px 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  color: $color__blue--dark;
+
+  &__number {
+    border: 1px solid $color__grey;
+    width: $pagination-item__number_size;
+    height: $pagination-item__number_size;
+    font-size: $pagination-item__number_font_size;
+  }
+
+  &__navigation {
+    height: $pagination-item__nav_height;
+    font-size: $pagination-item__nav_font_size;
+    margin: 0 $pagination-item__nav_margin;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &--current, &--disabled {
+      cursor: default;
+    }
+
+    &--disabled {
+      color: $color__grey;
+    }
+
+    &--current {
+      background-color: $color__blue--dark;
+      border-color: $color__blue--dark;
+      color: #fff;
+    }
+
+    &:first-child {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-left: 0;
+    }
+  }
+
+}

@@ -1,0 +1,83 @@
+@import './variables';
+
+$term_width: 280px;
+$scrollbar-width: 8px;
+
+.amw-dt-label,
+.level-data__label,
+.other-parties__label {
+  color: $color__blue--dark;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.amw-scroll {
+  &::-webkit-scrollbar-track {
+    background-color: $color__grey--light;
+  }
+
+  &::-webkit-scrollbar {
+    width: $scrollbar-width;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: $text__color--grey;
+  }
+}
+
+.amw-date-picker {
+  height: $input-height;
+  width: 100%;
+
+  &::-webkit-datetime-edit {
+    padding: 10px;
+  }
+  &::-webkit-datetime-edit-fields-wrapper {
+    color: $color__blue--dark
+  }
+  &::-webkit-datetime-edit-text {
+    padding: 0 5px;
+  }
+  &::-webkit-inner-spin-button {
+    display: none;
+  }
+  &::-webkit-calendar-picker-indicator {
+    color: $color__blue--dark;
+  }
+  &::-webkit-clear-button {
+    color: $color__blue--dark;
+    font-size: 14px;
+  }
+}
+
+.amw-detail-edit {
+  padding: 40px 0;
+  &__field {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 5px 40px;
+    label {
+      color: $color__blue--dark;
+      font-weight: 600;
+      line-height: 35px;
+      text-transform: uppercase;
+      width: $term_width;
+    }
+    input, label {
+      flex: .5;
+    }
+  }
+
+  &__submit {
+    border-top: 1px solid $color__grey;
+    margin-top: 40px;
+    padding: 20px 40px 0;
+    .cancel {
+      color: $color__blue;
+      text-transform: none;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+<app-header></app-header>
+<div class="container-fluid">
+  <div class="container">
+    <h1 class="warning-text">WARNING: This page is not functional yet</h1>
+    <button mat-button (click)="sidenav.toggle()">Show / Hide Topics</button>
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+        <div class="button-wrapper" *ngFor="let topic of topics">
+          <button mat-raised-button color="primary" (click)="updateTopicContent(topic)">{{topic}}</button>
+        </div>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <mat-toolbar class="app-toolbar">
+          <span>{{ selectedTopic }}</span>
+          <form class="search-form">
+            <mat-form-field>
+              <input matInput (keyup)="filterChanged($event)" placeholder="Search">
+            </mat-form-field>
+          </form>
+        </mat-toolbar>
+        <mat-card *ngFor="let contentPiece of content" class="card" (click)="selectContent(contentPiece)">
+          <div class="message">{{ contentPiece.value }}</div>
+        </mat-card>
+      </mat-sidenav-content>
+      <mat-sidenav-content>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</div>

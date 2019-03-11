@@ -1,0 +1,30 @@
+$base__content--width: 1280px;
+
+$address-edit__container-width: 1100px;
+$ibo-block-line-height: 3.5em;
+$input-width: 370px;
+$error-z-index: 1060; // set such value in order to show error message behind modal
+$input-height: 40px;
+
+$color__blue: #0075A4;
+$color__blue--dark: #002f5f;
+$color__blue--light: #008fc5;
+$color__grey: #dadada;
+$color__grey--light: #f4f4f4;
+$color__grey--dark: #bbbbbb;
+$color__grey--border: #e3e3e3;
+$color__red: #E11E45;
+$color__green: #22a347;
+$color__white: #ffffff;
+$color__black-shadow: rgba(0, 0, 0, .08);
+$color__black-fade: rgba(0, 0, 0, .5);
+
+$text__color: #56565a;
+$text__color--dark: #262626;
+$text__color--grey: #808285;
+$text__color--green: #20893d;
+$text__color--red: $color__red;
+$text__color--inactive: #ababab;
+
+$font__primary: 'SourceSansPro';
+$font__roboto: 'RobotoCondensed';

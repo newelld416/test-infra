@@ -1,0 +1,818 @@
+.amway-theme {
+  .a-spot-banner-component {
+    & * {
+      color: inherit;
+      background: inherit;
+    }
+    position: relative;
+    width: "calc(100% + 80px)";
+    margin-left: -40px;
+
+    @media (max-width: $screen-sm-max) {
+      width: "calc(100% + 30px)";
+      margin-left: -15px;
+    }
+
+    .banner-image-wrap {
+      img {
+        width: 100%;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        height: 100%;
+        text-align: center;
+        overflow: hidden;
+
+        img {
+          position: relative;
+          -webkit-transform: translate(-50%, 0);
+          -moz-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+          margin-left: 50%;
+          width: auto;
+          height: 100%;
+        }
+      }
+
+      &.full-width-banner {
+        .mobile-image {
+          display: none;
+        }
+        @media (max-width: $screen-sm-max) {
+          .desktop-image {
+            display: none;
+          }
+          .mobile-image {
+            display: inline-block;
+          }
+        }
+
+      }
+    }
+    &.banner-left-align {
+      .banner-content-wrap {
+        margin-left: 12%;
+        left: 0;
+
+        @media (max-width: $screen-sm-max) {
+          margin: 0;
+          width: 100%;
+        }
+      }
+    }
+    &.banner-right-align {
+      .banner-content-wrap {
+        margin-right: 12%;
+        right: 0;
+
+        @media (max-width: $screen-sm-max) {
+          margin: 0;
+          width: 100%;
+        }
+      }
+    }
+    .banner-content-wrap {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0;
+      width: 38%;
+    }
+    .banner-content {
+      width: 100%;
+      min-height: 70%;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      @media (max-width: $screen-sm-max) {
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+        min-height: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .banner-title-wrapper {
+        -webkit-align-self: flex-start;
+        -moz-align-self: flex-start;
+        -ms-align-self: flex-start;
+        align-self: flex-start;
+        display: block;
+        -webkit-flex: 9;
+        -moz-flex: 9;
+        -ms-flex: 9;
+        flex: 9;
+        width: 100%;
+        @media (max-width: $screen-sm-max) {
+          flex: inherit;
+          padding-bottom: 1em;
+        }
+      }
+      .banner-cta-wrapper {
+        -webkit-align-self: flex-end;
+        -moz-align-self: flex-end;
+        -ms-align-self: flex-end;
+        align-self: flex-end;
+        display: block;
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 100%;
+
+        @media (max-width: $screen-sm-max) {
+          flex: inherit;
+        }
+      }
+
+      .banner-title {
+        width: 100%;
+        margin-bottom: 0.5em;
+        text-transform: none;
+        & * {
+          font-size: 1em;
+          font-family: inherit;
+          line-height: inherit;
+        }
+
+        @media (max-width: $screen-sm-max) {
+          font-size: 30px;
+          margin-bottom: 0.25em;
+        }
+      }
+
+      .sub-title-wrap {
+        width: 100%;
+        margin-bottom: 1.5em;
+
+        @media (max-width: $screen-sm-max) {
+          display: none;
+        }
+        //no requirements
+        //@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        //  margin-bottom: 1em;
+        //}
+
+        .banner-sub-title {
+          font-size: 1.25em;
+          line-height: 1.2em;
+          & * {
+            font-size: 1em;
+            font-family: inherit;
+            line-height: inherit;
+          }
+
+          //no requirements
+          //@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+          //  font-size: 1em;
+          //}
+        }
+      }
+      .banner-button-link {
+        &:hover, &:focus {
+          & * {
+            text-decoration: none;
+          }
+        }
+        &.link-without-src {
+          &:hover, &:focus {
+            &, & * {
+              cursor: default;
+            }
+          }
+        }
+      }
+
+      .banner-button-wrap {
+        margin-bottom: 1.25em;
+
+        button.banner-btn {
+          position: relative;
+          background: none;
+          border: none;
+          padding: 0;
+
+          & * {
+            background: initial;
+            color: initial;
+          }
+
+          &:hover, &:focus {
+            .button-on-hover-bg {
+              display: block;
+            }
+          }
+
+          .btn-text-wrap {
+            height: 100%;
+            width: 100%;
+            border: 1px solid transparent;
+            display: block;
+            padding: 0 25px;
+            line-height: 46px;
+
+            .btn-text {
+              z-index: 100;
+              position: relative;
+              background: none;
+            }
+          }
+
+          .button-on-hover-bg {
+            height: 100%;
+            width: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fff;
+            opacity: 0.3;
+            z-index: 10;
+          }
+        }
+
+        .link-without-src {
+          button.banner-btn {
+            &:hover, &:focus {
+              .button-on-hover-bg {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      .banner-link-wrap {
+        a.primary-link {
+          & * {
+            color: inherit;
+          }
+
+          .primary-link-icon {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  /*
+   * full-width banner
+   */
+  .full-width-banner-component {
+    & * {
+      color: inherit;
+      background: inherit;
+    }
+    position: relative;
+    width: "calc(100% + 80px)";
+    margin-left: -40px;
+
+    @media (max-width: $screen-sm-max) {
+      width: "calc(100% + 30px)";
+      margin-left: -15px;
+    }
+
+    .banner-image-wrap {
+      img {
+        width: 100%;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        height: 100%;
+        text-align: center;
+        overflow: hidden;
+
+        img {
+          position: relative;
+          -webkit-transform: translate(-50%, 0);
+          -moz-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+          margin-left: 50%;
+          width: auto;
+          height: 100%;
+        }
+      }
+
+      &.full-width-banner {
+        .mobile-image {
+          display: none;
+        }
+        @media (max-width: $screen-sm-max) {
+          .desktop-image {
+            display: none;
+          }
+          .mobile-image {
+            display: inline-block;
+          }
+        }
+
+      }
+    }
+    &.banner-left-align {
+      .banner-content-wrap {
+        margin-left: 12%;
+        left: 0;
+
+        @media (max-width: $screen-sm-max) {
+          margin: 0;
+          width: 100%;
+        }
+      }
+    }
+    &.banner-right-align {
+      .banner-content-wrap {
+        margin-right: 12%;
+        right: 0;
+
+        @media (max-width: $screen-sm-max) {
+          margin: 0;
+          width: 100%;
+        }
+      }
+    }
+    .banner-content-wrap {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      background: transparent;
+      padding: 0;
+      width: 38%;
+
+      @media (max-width: $screen-sm-max) {
+        -webkit-align-items: flex-start;
+        -moz-align-items: flex-start;
+        -ms-align-items: flex-start;
+        align-items: flex-start;
+      }
+    }
+    .banner-content {
+      width: 100%;
+      min-height: 70%;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      @media (max-width: $screen-sm-max) {
+        text-align: center;
+        display: table;
+        margin: 0 auto;
+        max-width: 90%;
+        padding: 1.5em 1em;
+      }
+
+      .banner-title-wrapper {
+        -webkit-align-self: flex-start;
+        -moz-align-self: flex-start;
+        -ms-align-self: flex-start;
+        align-self: flex-start;
+        display: block;
+        -webkit-flex: 9;
+        -moz-flex: 9;
+        -ms-flex: 9;
+        flex: 9;
+        width: 100%;
+
+        @media (max-width: $screen-sm-max) {
+          align-self: initial;
+          flex: none;
+        }
+      }
+      .banner-cta-wrapper {
+        -webkit-align-self: flex-end;
+        -moz-align-self: flex-end;
+        -ms-align-self: flex-end;
+        align-self: flex-end;
+        display: block;
+        -webkit-flex: 1;
+        -moz-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        width: 100%;
+
+        @media (max-width: $screen-sm-max) {
+          align-self: initial;
+          flex: none;
+        }
+      }
+
+
+      .banner-title {
+        width: 100%;
+        margin-bottom: 0.5em;
+        text-transform: none;
+        & * {
+          font-size: 1em;
+          font-family: inherit;
+          line-height: inherit;
+        }
+
+        @media (max-width: $screen-sm-max) {
+          font-size: 28px;
+        }
+      }
+
+      .sub-title-wrap {
+        width: 100%;
+        margin-bottom: 1.5em;
+
+        @media (max-width: $screen-sm-max) {
+          display: none;
+        }
+        //no requirements
+        //@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        //  margin-bottom: 1em;
+        //}
+
+        .banner-sub-title {
+          font-size: 1.25em;
+          line-height: 1.2em;
+          & * {
+            font-size: 1em;
+            font-family: inherit;
+            line-height: inherit;
+          }
+
+          //no requirements
+          //@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+          //  font-size: 1em;
+          //}
+        }
+      }
+      .banner-button-link {
+        &:hover, &:focus {
+          & * {
+            text-decoration: none;
+          }
+        }
+        &.link-without-src {
+          &:hover, &:focus {
+            &, & * {
+              cursor: default;
+            }
+          }
+        }
+      }
+
+      .banner-button-wrap {
+        margin-bottom: 1.25em;
+
+        button.banner-btn {
+          position: relative;
+          background: none;
+          border: none;
+          padding: 0;
+
+          & * {
+            background: initial;
+            color: initial;
+          }
+
+          &:hover, &:focus {
+            .button-on-hover-bg {
+              display: block;
+            }
+          }
+
+          .btn-text-wrap {
+            height: 100%;
+            width: 100%;
+            border: 1px solid transparent;
+            display: block;
+            padding: 0 25px;
+            line-height: 46px;
+
+            .btn-text {
+              z-index: 100;
+              position: relative;
+              background: none;
+            }
+          }
+
+          .button-on-hover-bg {
+            height: 100%;
+            width: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fff;
+            opacity: 0.3;
+            z-index: 10;
+          }
+        }
+
+        .link-without-src {
+          button.banner-btn {
+            &:hover, &:focus {
+              .button-on-hover-bg {
+                display: none;
+              }
+            }
+          }
+        }
+
+
+      }
+
+      .banner-link-wrap {
+        a.primary-link {
+          & * {
+            color: inherit;
+          }
+
+          .primary-link-icon {
+            color: $white;
+          }
+          &.link-without-src {
+            &:hover, &:focus {
+              cursor: default;
+              & * {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  /*
+   * 2-sections banner
+   */
+  .two-sections-banner-component {
+    & * {
+      color: inherit;
+      background: inherit;
+    }
+    display: flex;
+    position: relative;
+    width: "calc(100% + 80px)";
+    margin-left: -40px;
+
+    @media (max-width: $screen-sm-max) {
+      width: "calc(100% + 30px)";
+      margin-left: -15px;
+      display: block;
+    }
+    .banner-image-wrap {
+      width: 50%;
+      flex: 1;
+      align-self: center;
+      display: flex;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      text-align: center;
+
+      img {
+        width: 100%;
+      }
+
+      @media (max-width: $screen-sm-max) {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        overflow: hidden;
+
+        img {
+          position: relative;
+          -webkit-transform: translate(-50%, 0);
+          -moz-transform: translate(-50%, 0);
+          -ms-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+          margin-left: 50%;
+          width: auto;
+          height: 100%;
+        }
+      }
+
+      .primary-link {
+        &.link-without-src {
+          &:hover, &:focus {
+            cursor: default;
+            & * {
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .mobile-image {
+        display: none;
+      }
+      @media (max-width: $screen-sm-max) {
+        .desktop-image {
+          display: none;
+        }
+        .mobile-image {
+          display: inline-block;
+        }
+      }
+    }
+    .banner-content-wrap {
+      top: 0;
+      //height: 100%;
+      display: flex;
+      //align-items: center;
+      background: transparent;
+      padding: 0;
+      position: relative;
+      width: 50%;
+      margin: 0;
+      flex: 1;
+      align-self: center;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+
+      @media (max-width: $screen-sm-max) {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+      }
+    }
+    .banner-content {
+      width: 100%;
+      padding: 0 7%;
+
+      @media (max-width: $screen-sm-max) {
+        text-align: center;
+        display: flex;
+        height: 100%;
+        max-width: 90%;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding: 1.5em 0;
+        margin: 0 auto;
+      }
+
+      .banner-title-wrapper {
+        display: block;
+        width: 100%;
+
+        @media (max-width: $screen-sm-max) {
+          -webkit-align-self: flex-start;
+          -moz-align-self: flex-start;
+          -ms-align-self: flex-start;
+          align-self: flex-start;
+          display: block;
+          -webkit-flex: 9;
+          -moz-flex: 9;
+          -ms-flex: 9;
+          flex: 9;
+        }
+      }
+      .banner-cta-wrapper {
+        display: block;
+        width: 100%;
+
+        @media (max-width: $screen-sm-max) {
+          -webkit-align-self: flex-end;
+          -moz-align-self: flex-end;
+          -ms-align-self: flex-end;
+          align-self: flex-end;
+          display: block;
+          -webkit-flex: 1;
+          -moz-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+        }
+      }
+
+      .banner-title {
+        width: 100%;
+        margin-bottom: 0.5em;
+        text-transform: none;
+        & * {
+          font-size: 1em;
+          font-family: inherit;
+          line-height: inherit;
+        }
+
+        @media (max-width: $screen-sm-max) {
+          font-size: 28px;
+        }
+      }
+
+      .sub-title-wrap {
+        width: 100%;
+        margin-bottom: 1.5em;
+
+        @media (max-width: $screen-sm-max) {
+          &.sub-title-mobile-hide {
+            display: none;
+          }
+        }
+
+        //no requirements
+        //@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+        //  margin-bottom: 1em;
+        //}
+
+        .banner-sub-title {
+          font-size: 1.25em;
+          line-height: 1.2em;
+          & * {
+            font-size: 1em;
+            font-family: inherit;
+            line-height: inherit;
+          }
+
+          //no requirements
+          //@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+          //  font-size: 1em;
+          //}
+        }
+      }
+
+      .banner-button-wrap {
+        margin-bottom: 1.25em;
+
+        button.banner-btn {
+          position: relative;
+          background: none;
+          border: none;
+          padding: 0;
+
+          & * {
+            background: initial;
+            color: initial;
+          }
+
+          &:hover, &:focus {
+            .button-on-hover-bg {
+              display: block;
+            }
+          }
+
+          .btn-text-wrap {
+            height: 100%;
+            width: 100%;
+            border: 1px solid transparent;
+            display: block;
+            padding: 0 25px;
+            line-height: 46px;
+
+            .btn-text {
+              z-index: 100;
+              position: relative;
+              background: none;
+            }
+          }
+
+          .button-on-hover-bg {
+            height: 100%;
+            width: 100%;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #fff;
+            opacity: 0.3;
+            z-index: 10;
+          }
+        }
+
+
+      }
+
+      .banner-link-wrap {
+        a.primary-link {
+          & * {
+            color: inherit;
+          }
+
+          .primary-link-icon {
+            color: $white;
+          }
+
+          &.link-without-src {
+            &:hover, &:focus {
+              cursor: default;
+              & * {
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

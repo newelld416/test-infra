@@ -1,0 +1,98 @@
+.cta-component-option-2 {
+  text-align: center;
+
+  .title-container {
+    margin: 0 0 10px 0;
+
+    @media (max-width: $screen-sm-max) {
+      font-size: 0.75em;
+    }
+  }
+
+  .sub-title-container {
+    margin: 0 0 20px 0;
+
+    .cta-sub-title {
+      font-size: 18px;
+    }
+  }
+
+  .body-copy-container{
+    margin: 0 0 30px 0;
+
+    .message-2 {
+      display: block;
+      font-weight: 600;
+    }
+
+    @media (max-width: $screen-sm-max) {
+      display: none;
+    }
+  }
+
+  .icon-container {
+    display: inline-block;
+    margin: 0 0 30px 0;
+
+    @media (max-width: $screen-sm-max) {
+      margin: 0 0 20px 0;
+    }
+
+    .icon-img-container {
+      width: auto;
+
+      @media (max-width: $screen-sm-max) {
+        width: 50%;
+        margin: 20px 0 20px 0;
+      }
+
+      .icon-wrap {
+        width: 130px;
+        height: 100px;
+        padding: 0;
+        display: inline-block;
+        float: none;
+
+        @media (max-width: $screen-sm-max) {
+          width: 84px;
+          height: 84px;
+        }
+
+        .icon-img {
+          max-width: 90px;
+          max-height: 90px;
+
+          @media (max-width: $screen-sm-max) {
+            max-width: 84px;
+            max-height: 84px;
+          }
+        }
+      }
+    }
+  }
+
+  .link-button-container {
+    a.link-button, div.link-button {
+      background-color: $deepBlue;
+      color: $white;
+      padding: 10px 20px;
+      display: inline-block;
+
+      & * {
+        background-color: inherit;
+        color: inherit;
+      }
+
+      .link-button-text {
+        background: transparent;
+      }
+
+      &:hover, &:focus {
+        & * {
+          text-decoration: none;
+          color: $white;
+        }
+      }
+    }
+  }
+}

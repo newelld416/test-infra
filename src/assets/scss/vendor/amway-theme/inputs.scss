@@ -1,0 +1,32 @@
+@import 'variables.scss';
+
+.amway-theme {
+    input[type=text], input[type=number], input[type=email], textarea, select {
+      color: inherit;
+      display: inline-block;
+      text-decoration: none;
+      white-space: pre;
+    }
+
+    input[type=text], input[type=number], input[type=email], textarea, select {
+      color: $deepBlue;
+      background-color: $white;
+      font-family: 'SourceSansPro';
+      font-weight: 400;
+      height: 40px;
+      font-size: 1em;
+      border: 1px solid $grey1;
+      padding: 0 10px;
+      width: 100%;
+      outline: none;
+
+      &:focus {
+        border: 1px solid $blue;
+      }
+
+      &:disabled {
+        background: $grey0;
+        color: $grey2;
+      }
+    }
+}

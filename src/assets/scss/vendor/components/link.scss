@@ -1,0 +1,138 @@
+@import '../amway-theme/variables.scss';
+@import '../amway-theme/fonts.scss';
+
+.amway-theme {
+  a {
+    color: $blue;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    font-size: 1em;
+    font-weight: 600;
+
+    &:hover, &:focus {
+      cursor: pointer;
+      color: $blue;
+      text-decoration: underline;
+
+      span {
+        color: $blue;
+        text-decoration: underline;
+      }
+    }
+
+    span {
+      font-weight: 600;
+      color: $blue;
+      background: transparent;
+      text-decoration: none;
+    }
+
+    &.primary-link {
+      color: $deepBlue;
+      text-transform: uppercase;
+
+      span {
+        color: $deepBlue;
+        text-transform: uppercase;
+      }
+
+      .primary-link-icon {
+        width: 24px;
+        height: 24px;
+        margin-left: 3px;
+        background: $rose;
+        border-radius: 50%;
+        color: $white;
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        font-size: 16px !important;
+        font-weight: 400;
+
+        &:before {
+          position: relative;
+
+        }
+      }
+
+      &:hover, &:focus {
+        color: $deepBlue;
+        text-decoration: none;
+        span {
+          color: $deepBlue;
+        }
+
+        .primary-link-icon {
+          text-decoration: none;
+          color: $white;
+        }
+      }
+    }
+
+    &.secondary-link-with-icon {
+      text-transform: uppercase;
+
+      span {
+        text-transform: uppercase;
+      }
+      .secondary-link-icon {
+        font-size: 24px;
+        line-height: 24px;
+        margin-right: 3px;
+        vertical-align: bottom;
+        display: inline-block;
+        font-weight: 400;
+      }
+
+      &:hover, &:focus {
+        text-decoration: none;
+
+        .secondary-link-icon {
+          text-decoration: none;
+        }
+      }
+    }
+
+    &.breadcrumb-link {
+      color: $grey4;
+      font-size: 14px;
+      font-weight: 400;
+      span {
+        color: $grey4;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      &:hover, &:focus {
+        color: $grey4;
+        span {
+          color: $grey4;
+        }
+      }
+
+      &.breadcrumb-current-page {
+        font-weight: 600;
+        span {
+          font-weight: 600;
+        }
+      }
+    }
+
+    &.disabled {
+      pointer-events: none;
+      cursor: default !important;
+      color: $grey2;
+
+      span {
+        color: $grey2;
+      }
+
+      .primary-link-icon {
+        background-color: $grey2;
+        color: $white;
+      }
+    }
+  }
+}

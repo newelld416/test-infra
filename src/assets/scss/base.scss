@@ -1,0 +1,93 @@
+html, body {
+  height: 100%;
+}
+body {
+  color: $text__color;
+  font-family: $font__primary, "Helvetica Neue", sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.amw-logo {
+  background: url(assets/img/amw-logo.svg) no-repeat center;
+}
+
+.amw-spinner,
+.amw-spinner:after {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.amw-spinner {
+  margin: 0 auto;
+  font-size: 5px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 5px solid rgba(0, 0, 0, 0.1);
+  border-right: 5px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+  border-left: 5px solid $color__blue--dark;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: amw-spin 1.1s infinite linear;
+  animation: amw-spin 1.1s infinite linear;
+}
+
+.amw-loading-indicator {
+  span {
+    font-size: 20px;
+    animation: amw-blink 1.4s infinite both;
+  }
+
+  span:nth-child(2) {
+    animation-delay: .2s;
+  }
+
+  span:nth-child(3) {
+    animation-delay: .4s;
+  }
+}
+
+.amway-theme {
+  input[type=text].amw-error-input {
+    border-color: $color__red;
+  }
+
+  .amw-error-message {
+    display: block;
+    color: $color__red;
+    font-size: 14px;
+  }
+
+}
+
+.amw-search-results {
+  margin: 40px 0;
+
+  &__no-results {
+    text-align: center;
+    font-size: 35px;
+    color: $text__color;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.amw-searchforce-results {
+  margin: 40px 0;
+
+  &__no-results {
+    text-align: center;
+    font-size: 35px;
+    color: $text__color;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}
+
+.amw-modal-buttons-wrapper {
+  padding: 20px 40px 40px;
+  border-top: 1px solid $color__grey;
+}

@@ -1,0 +1,33 @@
+version: 0.2
+env:
+    variables:
+        CACHE_CONTROL: "86400"
+        BUILD_ENV: "preprod"
+        S3_BUCKET: "infra-manager-preprod"
+        CLOUDFRONT_ID: "E1I5BQGZXLR8JY"
+phases:
+    install:
+        commands:
+            - echo Installing source NPM dependencies...
+            - npm install
+            - npm install -g @angular/cli
+    build:
+        commands:
+            # Builds Angular application.
+            - echo Build started on `date`
+            - npm run build-qa
+    post_build:
+         commands:
+            # Clear S3 bucket.
+            - aws s3 rm s3://${S3_BUCKET} --recursive
+            - echo S3 bucket is cleared.
+            # Copy dist folder to S3 bucket
+            - aws s3 cp dist s3://${S3_BUCKET} --recursive
+            # STEP: Clear CloudFront cache.
+            - aws configure set preview.cloudfront true
+            - aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_ID} --paths "/*"
+artifacts:
+    files:
+        - '**/*'
+    base-directory: 'dist*'
+    discard-paths: yes

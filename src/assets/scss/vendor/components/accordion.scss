@@ -1,0 +1,142 @@
+@import '../amway-theme/variables.scss';
+@import '../amway-theme/fonts.scss';
+
+.amway-theme {
+  .accordion-element {
+    padding: 0;
+    margin: 0;
+
+    .panel {
+      margin-bottom: 0;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    .accordion-panel {
+      border-bottom: 1px solid $grey1;
+
+      &:first-child {
+        border-top: 1px solid $grey1;
+      }
+    }
+
+    .accordion-toggle {
+      padding: 1.5em 1.25em;
+      cursor: pointer;
+      &.collapsed {
+        .icon-minus:before {
+          content: "\ea79";
+        }
+      }
+    }
+
+    .accordion-panel-title {
+      margin: 0;
+      line-height: 1.2em;
+      .title-element {
+        font-size: 1em;
+        background: none;
+        display: table-cell;
+
+
+        &.accordion-header-icon {
+          color: $blue;
+          position: relative;
+          top: 1px;
+          margin-right: 5px;
+          max-width: 30px;
+          width: 30px;
+        }
+        &.title-text {
+          padding-right: 20px;
+        }
+        &.accordion-icon-wrapper {
+          vertical-align: middle;
+        }
+        .icon-minus {
+          color: $blue;
+          font-size: 0.5em;
+          line-height: 2.4em;
+
+          &:hover {
+            color: $cyan;
+          }
+        }
+      }
+    }
+
+    .accordion-title-wrapper {
+      width: 100%;
+      display: table;
+      font-size: 1em;
+    }
+
+    .accordion-panel-collapse {
+      .accordion-collapse-wrapper {
+        padding: 0 1.875em 1.875em 3.125em;
+      }
+
+      .accordion-resources-wrapper {
+        .resources-item {
+          &__wrapper {
+            padding: 10px 0;
+          }
+
+          &__img {
+            width: 20px;
+            height: 20px;
+
+            &-wrapper {
+              display: inline-block;
+              width: 25px;
+              text-align: center;
+            }
+
+            &--RESOURCE, &--TRAINING {
+              width: 20px;
+              height: auto;
+            }
+            &--CONTENT_PAGE, &--MY_BIZ, &--MICRO_SITE_PAGE {
+              height: 20px;
+              width: auto;
+            }
+          }
+
+          &__link {
+            vertical-align: middle;
+          }
+
+          &__title {
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+
+    &.accordion-global-component {
+      .accordion-panel-title {
+        text-transform: none;
+        .title-element.accordion-header-icon {
+          top: 0;
+
+          .icon-image {
+            max-width: 20px;
+            width: auto;
+            vertical-align: middle;
+            bottom: 2px;
+            position: relative;
+          }
+        }
+      }
+
+      .accordion-panel-collapse .accordion-collapse-wrapper {
+        & * {
+          background: inherit;
+          color: inherit;
+          font-size: 1em;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import '../theme-variables.less';
+
+.amw {
+  &__key-value {
+    > div {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -moz-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -moz-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+  
+  @media(max-width: @screen-sm) {
+      &__key-value > div {
+        display: block;
+        margin-bottom: 0.2em;
+      }
+    }
+}

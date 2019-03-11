@@ -1,0 +1,50 @@
+.amway-theme {
+  table {
+    padding: 0;
+    margin: 0;
+
+    td, tr, th {
+      padding: 0;
+      margin: 0;
+    }
+    tr {
+      td, th {
+        padding-right: 10px;
+        padding-left: 10px;
+      }
+    }
+    thead {
+      tr {
+        height: 40px;
+        line-height: 38px;
+        background: @grey0;
+        border-top: 1px solid @grey1;
+        border-bottom: 1px solid @grey1;
+      }
+      td, th {
+        background: transparent;
+        font-size: 0.875em;
+        color: @deepBlue;
+        text-transform: uppercase;
+        font-weight: 600;
+        vertical-align: middle;
+      }
+    }
+
+    tbody {
+      tr {
+        &:nth-of-type(even) {
+          background: @grey0;
+        }
+      }
+      td {
+        background: transparent;
+        font-size: 1em;
+        color: @grey4;
+        padding-top: 1.125em;
+        padding-bottom: 1.125em;
+        line-height: 1.5em;
+      }
+    }
+  }
+}
