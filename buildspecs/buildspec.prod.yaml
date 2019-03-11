@@ -4,7 +4,7 @@ env:
         CACHE_CONTROL: "86400"
         BUILD_ENV: "prod"
         S3_BUCKET: "amer-admin-preprod"
-        CLOUDFRONT_ID: "ESV9GUHFSEOTM"
+        CLOUDFRONT_ID: "E3O6BVQ8M0L2LO"
 phases:
     install:
         commands:
