@@ -23,6 +23,12 @@ const CARDS = [
     class: CARD_CLASS
   },
   {
+    primaryTitle: 'Search Force',
+    description: 'This function is used to manage the Seach Force platform',
+    link: 'search-force',
+    class: CARD_CLASS
+  },
+  {
     primaryTitle: 'Kafka',
     description: 'This function is used to manage kafka platform',
     link: 'kafka',
@@ -32,12 +38,6 @@ const CARDS = [
     primaryTitle: 'Keep',
     description: 'This function is used to manage the KEEP platform',
     link: 'keep',
-    class: CARD_DISABLED_CLASS
-  },
-  {
-    primaryTitle: 'Search Force',
-    description: 'This function is used to manage the Seach Force platform',
-    link: 'search-force',
     class: CARD_DISABLED_CLASS
   },
   {

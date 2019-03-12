@@ -2,12 +2,56 @@
 <div class="container-fluid">
   <div class="container">
     <div class="section-container overview">
-      <h1 class="warning-text">WARNING: This page is not functional yet</h1>
-      <span>
-        <button mat-raised-button color="primary">Topics</button>
-      </span>
-      <button type="file" mat-raised-button color="primary">Primary</button>
-      <button mat-raised-button class="ng-hide" id="input-file-id" multiple type="file">Choose Files</button>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card">
+            <h5 class="card-header">Account Sync</h5>
+            <div class="card-body">
+              <p class="card-text">This will sync the following account with SearchForce</p>
+              <form>
+                <div class="form-group">
+                  <label for="selector">Affiliate</label>
+                  <select class="custom-select activity-selector" id="selector">
+                    <option selected>010</option>
+                    <option>170</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="aboNUmber">ABO Number</label>
+                  <input type="text" class="form-control" id="aboNUmber" placeholder="ex. 670">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <h5 class="card-header">Party Sync (NOT IMPLEMENTED)</h5>
+            <div class="card-body">
+              <p class="card-text">This will sync the following party with SearchForce</p>
+              <form>
+                  <div class="form-group">
+                    <label for="selector">Affiliate</label>
+                    <select class="custom-select activity-selector" id="selector">
+                      <option selected>010</option>
+                      <option>170</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="aboNumber">ABO Number</label>
+                    <input type="text" class="form-control" id="aboNumber" placeholder="ex. 670">
+                  </div>
+                  <div class="form-group">
+                    <label for="partyId">Party ID</label>
+                    <input type="text" class="form-control" id="partyId" placeholder="ex. 12345678">
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
