@@ -55,18 +55,19 @@ export class EnvAdminComponent implements OnInit {
     this.populateSystems();
   }
 
-  populateSystems() {
+  populateSystems(selectedConfiguration?: string) {
     this.dataSet = [];
-    this.isLoading = true;
-    const configuration = this.selectedConfiguration  ? this.selectedConfiguration : 'qa-refresh';
+    const configuration = selectedConfiguration  ? selectedConfiguration : 'qa-refresh';
     this.systemActivitiesService.getSystems({ activity: configuration })
       .pipe(finalize(() => {
         this.isLoading = false;
         this.resultSchema = SEARCH_RESULTS_SCHEMA;
       }))
       .subscribe((response: [any]) => {
-        for (const index of JSON.parse(JSON.stringify(response))) {
-          this.dataSet.push(index);
+        if (!response.includes('Error')) {
+          for (const index of JSON.parse(JSON.stringify(response))) {
+            this.dataSet.push(index);
+          }
         }
       });
   }
@@ -82,8 +83,7 @@ export class EnvAdminComponent implements OnInit {
   }
 
   setSelectedConfiguration(configuration: string) {
-    this.selectedConfiguration = configuration;
-    this.populateSystems();
+    this.populateSystems(configuration);
   }
 
   /**
